@@ -6,7 +6,7 @@ const key = "ns2SCrqXEt8N2ap6PDw1zFO935bspXaH";
 
 
 
-const GetEvents = () => {
+const GetEvents = (props) => {
     const [coords, setCoords] = useState('');
     const [data, setData] = useState('');
     // const location = UseGeoLocation();
@@ -25,25 +25,31 @@ const GetEvents = () => {
 
     const fetchResults = async () => {
         let url = `${baseURL}events.json?apikey=${key}`
+        // let myData = null;
 
         const response = fetch(url)
-        .then(res => res.json())
-        .then(data => console.log(data._embedded.events))
+        .then(res => {
+            const body = res.json()
+            return(body)
+        })
+        // .then(data => data)
 
         return response;
     }
 
-    useEffect(() => {
+    useEffect (async () => {
         if(data === "") {
-            const getRes = (res) => setData(fetchResults(data))
+            const myResults = await fetchResults();
+
+            console.log(myResults);
         }
     }, [data])
-    console.log(data);
+    
 
     return(
         <div className='main'>
             <div className='mainDiv'>
-
+                <p>{data._embedded}</p>
             </div>
         </div>
     )

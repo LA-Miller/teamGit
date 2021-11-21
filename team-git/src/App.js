@@ -10,11 +10,13 @@ import GetEvents from './apis/Events';
 // })); 
 
 function App() {
+  const [data, setData] = useState('');
  
   
   return (
     <div>
       <GetEvents />
+      <p>{data._embedded}</p>
     </div>
   );
 }
