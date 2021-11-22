@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import {Button, Form} from 'reactstrap';
 
 const UseGeoLocation = () => {
     const [location, setLocation] = useState({
