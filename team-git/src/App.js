@@ -1,16 +1,19 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
-import Weather from './apis/Weather';
+import React, { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import "./App.css";
+import GetEvents from "./apis/Events";
+import Weather from "./apis/Weather";
 
-function App() {
-  
-  
+const App = () => {
+  const [data, setData] = useState("");
+
   return (
-    <div className="App">
+    <div className="main">
+      <div className="mainDiv"></div>
+      <GetEvents />
       <Weather />
     </div>
   );
-}
+};
 
 export default App;
