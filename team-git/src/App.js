@@ -1,16 +1,14 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import UseGeoLocation from './geolocation/UseGeoLocation';
+import Weather from './apis/Weather';
 
 function App() {
-  const location =  UseGeoLocation();
+  
   
   return (
     <div className="App">
-      {
-        location.loaded ? JSON.stringify(location) : "Location data not available"
-      }
+      <Weather />
     </div>
   );
 }
