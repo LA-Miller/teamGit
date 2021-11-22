@@ -5,8 +5,6 @@ const baseURL = 'https://app.ticketmaster.com/discovery/v2/';
 const key = "ns2SCrqXEt8N2ap6PDw1zFO935bspXaH";
 
 const GetEvents = (props) => {
-    const [isLoaded, setIsLoaded] = useState(true);
-    const [coords, setCoords] = useState('');
     const [data, setData] = useState([]);
     const [lat, setLat] = useState('');
     const [lng, setLng] = useState('')
@@ -21,22 +19,12 @@ const GetEvents = (props) => {
             const longitude = navigator.geolocation.getCurrentPosition( getLng );
         }
     }, [lat, lng])
-
-    useEffect(() => {
-        if(lng) {
-            console.log("lng:", lng);
-        }
-        if(lat) {
-            console.log("lat:", lat);
-        }       
-    }, [lng, lat])
    
     const fetchResults = async () => {
         let url = `${baseURL}events.json?&latlong=${lat},${lng}&apikey=${key}`
 
         const response = await fetch(url)
         .then(res => {
-            // setIsLoaded(false);
             const body = res.json()
             return(body)       
         })
@@ -46,20 +34,10 @@ const GetEvents = (props) => {
     }
 
     useEffect (async () => {
-        console.log(!!lat)
         if(data.length < 1 && lat && lng) {
-                const myResults = await fetchResults();
-                console.log(myResults);
-                console.log(data)        
+                const myResults = await fetchResults();        
         }
     }, [data, lat, lng])
-
-    useEffect (() => {
-        if(data){
-            console.log("data:", data);
-        }
-        
-    }, [data])
     
     const dataRenderer = data.map((myData) => {
         return(
