@@ -22,7 +22,6 @@ const Weather = (props) => {
         }
     }, [lat, lng])
 
-    // console.log(lat, lng)
 
     const weatherData = async () => {
 
@@ -80,7 +79,6 @@ const Weather = (props) => {
         }
     }, [currentWeather, lat, lng]);
 
-    console.log(weatherDescription)
     return (
         <>
             <h3>Current Weather</h3>
