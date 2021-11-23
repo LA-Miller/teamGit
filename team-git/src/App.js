@@ -1,76 +1,39 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
-import { Container, Row, Col } from 'reactstrap';
-import Footer from './site/Footer';
-import Headers from './site/Header';
-import Nasa from './apis/Nasa'
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import "./App.css";
+import { Container, Row, Col } from "reactstrap";
+import GetEvents from "./apis/Events";
+import Weather from "./apis/Weather";
+import Footer from "./site/Footer";
+import Headers from "./site/Header";
+import Nasa from "./apis/Nasa";
 
-function App() {
-  const [lat, setLat] = useState();
-  const [lon, setLon] = useState();
-  // const [imgurl, setImgurl] = useState();
-  // let imgurl='';
-  // const [status, setStatus] = useState();
-
-  const getLocation = () => {
-    if (!navigator.geolocation) {
-      // console.log('no')
-      // setStatus('Geolocation is not supported by your browser');
-    } else {
-      // console.log('see')
-      // setStatus('Locating...');
-      navigator.geolocation.getCurrentPosition((position) => {
-        // console.log('position');
-        // setStatus('mira');
-        console.log(position.coords.latitude);
-        setLat(position.coords.latitude);
-        setLon(position.coords.longitude);
-       
-        // setImgurl(Nasa(position.coords.longitude,position.coords.latitude));
-        // console.log('url', imgurl);
-      }, () => {
-        // setStatus('Unable to retrieve your location');
-      });
-    }
-  }
-
-  // getLocation(imgurl);
-  useEffect(() => {
-    getLocation();
-  }, [lat, lon]);
-  // console.log(lat, lon);
-
+const App = () => {
   return (
-
-    <div className="App">
+    <div className="page">
+      <div className="navbar">
       <Headers />
-      <hr />
-      <div className="App">
-      {/* <p>{status}</p>
-      {lat && <p>Latitude: {lat}</p>}
-      {lon && <p>Longitude: {lon}</p>} */}
-      <hr />
       </div>
-      <Container>
+      <Container className="form">
         <Row>
-          <Col>
-            <h2><Nasa lat={lat} lon={lon} /></h2>
-            {/* <Nasa lat={lat} lon={lon} /> */}
-            {/* {Nasa(lon, lat)} */}
-            {/* <Nasa lat={lat} lon={lon} /> */}
-            
+          <Col className="weather" md="6">
+            <Weather />
           </Col>
-
+          <Col className="nasa" md="6">
+            <h2>
+              <Nasa />
+            </h2>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="events" md="12">
+            <h1 className="events-nearby">Events Near You!</h1>
+            <GetEvents />
+          </Col>
         </Row>
       </Container>
-      <hr />
-      <Footer />
-
     </div>
   );
-
-}
+};
 
 export default App;
