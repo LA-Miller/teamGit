@@ -1,4 +1,51 @@
+
 /* .App {
+
+body {
+  background-image: url(assets/background-3268840_1920.jpg);
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.form {
+  margin: auto;
+  margin-top: 200px;
+  width: 75%;
+  padding: 20px;
+  background-color: rgba(169, 231, 246, 0.7);
+}
+
+button{
+  margin: auto;
+  width: 50%;
+}
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+.mainWeather {
+  display: flex;
+}
+
+.weather {
+  margin-bottom: 50px;
+}
+
+p {
+  margin: 10px;
+}
+
+.App {
+
   text-align: center;
 }
 
