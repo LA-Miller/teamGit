@@ -8,7 +8,7 @@ const Header = () => {
         <NavbarBrand href="/">
           <img
             src={logo}
-            width="600px"
+            width="1800px"
             height="154px"
             className="d-inline-block align-top"
             alt="Your Locator Logo"
