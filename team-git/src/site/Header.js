@@ -1,5 +1,5 @@
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
-import logo from '../assets/logo.svg';
+import logo from "../assets/logo.svg";
 
 const Header = () => {
   return (
@@ -8,13 +8,13 @@ const Header = () => {
         <NavbarBrand href="/">
           <img
             src={logo}
-            width="307px"
+            width="1800px"
             height="154px"
             className="d-inline-block align-top"
             alt="Your Locator Logo"
           />
         </NavbarBrand>
-        <Nav>
+        <Nav className="m-auto github">
           <NavLink href="https://github.com/LA-Miller/teamGit/tree/master">
             GitHub
           </NavLink>

@@ -3,7 +3,6 @@ import { Button } from "reactstrap";
 
 const Weather = (props) => {
   const [currentWeather, setCurrentWeather] = useState([]); // variable
-//   const [icon, setIcon ] = useState([]);
   const [temp, setTemp] = useState("");
   const [displayTemp, setDisplayTemp] = useState("");
 
@@ -27,7 +26,6 @@ const Weather = (props) => {
     )
       .then((res) => res.json())
       .then((logWeatherData) => {
-        
         const Temp = Math.floor((logWeatherData.main.temp - 273.15) * 1.8 + 32);
         setTemp(Temp);
         setDisplayTemp({
@@ -56,10 +54,7 @@ const Weather = (props) => {
     }
   };
 
-
-
   const weatherDescription = currentWeather.map((wthD) => {
-    
     return (
       <div key={wthD.description} style={{ textTransform: "capitalize" }}>
         {wthD.description}
@@ -70,7 +65,6 @@ const Weather = (props) => {
   useEffect(() => {
     if (currentWeather.length < 1 && lat && lng) {
       weatherData();
-    
     }
   }, [currentWeather, lat, lng]);
 
@@ -78,6 +72,7 @@ const Weather = (props) => {
     <>
       <div className="weatherDiv">
         <h1>Current Weather</h1>
+        <h1 className="currWeather">Current Weather</h1>
         <div className="mainWeather">
           <p>{weatherDescription}</p>
           <p>
@@ -85,7 +80,11 @@ const Weather = (props) => {
           </p>
         </div>
         <div className="weatherBtn">
-          <Button className="btn btn-success" onClick={tempConversion} disabled={temp === ""}>
+          <Button
+            className="btn btn-success"
+            onClick={tempConversion}
+            disabled={temp === ""}
+          >
             Temp Conversion
           </Button>
         </div>
