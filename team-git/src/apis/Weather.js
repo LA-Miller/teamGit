@@ -20,6 +20,13 @@ const Weather = (props) => {
     }
   }, [lat, lng]);
 
+  useEffect(() => {
+    if (currentWeather.length < 1 && lat && lng) {
+      weatherData();
+    }
+  }, [currentWeather, lat, lng]);
+
+
   const weatherData = async () => {
     await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=3ceae6fb2d4de00771fc5d875ad44c15`
@@ -62,11 +69,6 @@ const Weather = (props) => {
     );
   });
 
-  useEffect(() => {
-    if (currentWeather.length < 1 && lat && lng) {
-      weatherData();
-    }
-  }, [currentWeather, lat, lng]);
 
   return (
     <>
