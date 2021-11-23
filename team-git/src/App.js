@@ -1,9 +1,13 @@
+
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import { Container, Row, Col } from "reactstrap";
 import GetEvents from "./apis/Events";
 import Weather from "./apis/Weather";
+import Footer from './site/Footer';
+import Headers from './site/Header';
+import Nasa from './apis/Nasa'
 
 const App = () => {
 
@@ -14,7 +18,7 @@ const App = () => {
         <Weather />
         </Col>
         <Col className="nasa" md="6">
-          Image
+          <h2><Nasa lat={lat} lon={lon} /></h2>
         </Col>
       </Row>
       <Row>
