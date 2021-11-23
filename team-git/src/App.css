@@ -86,9 +86,15 @@ p {
   }
 }
 
-.header {
-  width: 100%;
+header {
+  margin: 0 auto;
 }
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
 .nasa-photo {
   display: flex;
   justify-content: center;

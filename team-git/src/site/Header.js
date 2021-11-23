@@ -5,16 +5,16 @@ const Header = () => {
   return (
     <header>
       <Navbar className="header">
-        <NavbarBrand href="/">
+        <NavbarBrand className="logo" href="/">
           <img
             src={logo}
-            width="1800px"
-            height="154px"
-            className="d-inline-block align-top"
+            // width="1800"
+            // height="154"
+            // className="d-inline-block align-top"
             alt="Your Locator Logo"
           />
         </NavbarBrand>
-        <Nav className="m-auto github">
+        <Nav className=" github m-auto">
           <NavLink href="https://github.com/LA-Miller/teamGit/tree/master">
             GitHub
           </NavLink>
