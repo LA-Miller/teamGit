@@ -3,7 +3,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
 }
 
@@ -23,7 +23,7 @@ body {
 }
 
 h1 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
 }
 
@@ -35,7 +35,7 @@ h1 {
   background-color: rgba(169, 231, 246, 0.7);
 }
 
-button{
+button {
   margin: auto;
   width: 50%;
 }
@@ -72,7 +72,6 @@ p {
 }
 
 .App {
-
   text-align: center;
 }
 
@@ -85,31 +84,7 @@ p {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-} 
-
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-/* .App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */ 
 
 .header {
   width: 100%;
@@ -119,11 +94,9 @@ p {
   justify-content: center;
   margin-top: 20px;
   max-height: 100%;
-  
 }
 
 .nasa-photo img {
-  
   width: 50%;
   object-fit: contain;
   max-height: 80vh;
@@ -131,5 +104,5 @@ p {
 }
 
 .navbar {
-  background-color: rgba(169, 231, 246, 0.7);;
+  background-color: rgba(169, 231, 246, 0.7);
 }

@@ -4,7 +4,6 @@ import "./App.css";
 import { Container, Row, Col } from "reactstrap";
 import GetEvents from "./apis/Events";
 import Weather from "./apis/Weather";
-import Footer from "./site/Footer";
 import Headers from "./site/Header";
 import Nasa from "./apis/Nasa";
 
