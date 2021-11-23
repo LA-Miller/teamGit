@@ -1,7 +1,6 @@
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
 import logo from '../assets/logo.svg';
 
-
 const Header = () => {
   return (
     <header>
