@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div className="page">
       <div className="navbar">
-      <Headers />
+        <Headers />
       </div>
       <Container className="form">
         <Row>
@@ -25,12 +25,8 @@ const App = () => {
             </h2>
           </Col>
         </Row>
-        <Row>
-          <Col className="events" md="12">
-            <h1 className="events-nearby">Events Near You!</h1>
-            <GetEvents />
-          </Col>
-        </Row>
+
+        <GetEvents />
       </Container>
     </div>
   );

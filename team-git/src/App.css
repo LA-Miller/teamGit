@@ -1,4 +1,3 @@
-
 body {
   background-image: url(assets/background-3268840_1920.jpg);
   background-repeat: no-repeat;
@@ -8,6 +7,21 @@ body {
   font-weight: bold;
 }
 
+.github {
+  display: flex;
+  justify-content: right;
+}
+
+.events-nearby {
+  display: flex;
+  justify-content: center;
+}
+
+.events-container {
+  display: flex;
+  justify-content: center;
+}
+
 h1 {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
@@ -15,7 +29,7 @@ h1 {
 
 .form {
   margin: auto;
-  margin-top: 100px;
+  margin-top: 50px;
   width: 75%;
   padding: 20px;
   background-color: rgba(169, 231, 246, 0.7);
@@ -35,6 +49,18 @@ a {
 
 .mainWeather {
   display: flex;
+  justify-content: center;
+}
+
+.currWeather {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
 }
 
 .weather {
@@ -84,22 +110,24 @@ p {
     transform: rotate(360deg);
   }
 } */ 
-.header {
-  background-color: lightblue;
-}
 
+.header {
+  width: 100%;
+}
 .nasa-photo {
   display: flex;
-  padding: 40px;
-  margin: 0 auto;
+  justify-content: center;
+  margin-top: 20px;
   max-height: 100%;
+  
 }
 
 .nasa-photo img {
+  
   width: 50%;
-  margin-right: 50px;
   object-fit: contain;
   max-height: 80vh;
+  border: 3px solid black;
 }
 
 .navbar {

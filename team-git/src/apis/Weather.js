@@ -83,8 +83,7 @@ const Weather = (props) => {
   return (
     <>
       <div className="weatherDiv">
-        <h1>Current Weather</h1>
-        {/* <img src={weatherIcon}></img> */}
+        <h1 className="currWeather">Current Weather</h1>
         <div className="mainWeather">
           <p>{weatherDescription}</p>
           <p>
