@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from 'reactstrap';
 
-
+/*========================================
+                Variables
+========================================*/
 
 const Weather = (props) => {
     const [currentWeather, setCurrentWeather] = useState([]);// variable
@@ -22,7 +24,9 @@ const Weather = (props) => {
         }
     }, [lat, lng])
 
-    // console.log(lat, lng)
+    /*============================
+                Functions
+    ==============================*/
 
     const weatherData = async () => {
 
@@ -31,16 +35,16 @@ const Weather = (props) => {
             .then((logWeatherData) => {
                 console.log(logWeatherData)
                 console.log(logWeatherData.main)
-                const Temp = (Math.floor(((logWeatherData.main.temp - 273.15) * 1.8) + 32))
+                const Temp = (Math.floor(((logWeatherData.main.temp - 273.15) * 1.8) + 32));
                 setTemp(Temp)
                 setDisplayTemp({
                     measure: "f",
                     num: Temp
-                })
-                setCurrentWeather(logWeatherData.weather)//function
+                });
+                setCurrentWeather(logWeatherData.weather)
 
-            })
-    }
+            });
+    };
 
     const tempConversion = () => {
         if (
@@ -51,18 +55,18 @@ const Weather = (props) => {
             setDisplayTemp({
                 measure: "c",
                 num: newTemp
-            })
+            });
         } else {
             const newTemp = (Math.floor(temp * 1.8) + 32);
             setTemp(newTemp)
             setDisplayTemp({
                 measure: "f",
                 num: newTemp
-            })
+            });
 
-        }
+        };
 
-    }
+    };
 
     const weatherDescription = currentWeather.map((wthD) => {
         console.log(wthD)
@@ -70,14 +74,14 @@ const Weather = (props) => {
             <div 
                 key={wthD.description}
                 style={{textTransform:"capitalize"}}>{wthD.description}</div>
-        )
-    })
+        );
+    });
 
     useEffect(() => {
         if (currentWeather.length < 1 && lat && lng) {
             weatherData();
             console.log(weatherData);
-        }
+        };
     }, [currentWeather, lat, lng]);
 
     console.log(weatherDescription)
