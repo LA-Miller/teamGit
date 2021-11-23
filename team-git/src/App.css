@@ -1,8 +1,9 @@
 
-/* .App {
-
 body {
   background-image: url(assets/background-3268840_1920.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
 }
@@ -14,7 +15,7 @@ h1 {
 
 .form {
   margin: auto;
-  margin-top: 200px;
+  margin-top: 100px;
   width: 75%;
   padding: 20px;
   background-color: rgba(169, 231, 246, 0.7);
@@ -58,7 +59,7 @@ p {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-} */
+} 
 
 /* .App-header {
   background-color: #282c34;
@@ -82,7 +83,7 @@ p {
   to {
     transform: rotate(360deg);
   }
-} */ */
+} */ 
 .header {
   background-color: lightblue;
 }
@@ -99,4 +100,8 @@ p {
   margin-right: 50px;
   object-fit: contain;
   max-height: 80vh;
+}
+
+.navbar {
+  background-color: rgba(169, 231, 246, 0.7);;
 }
