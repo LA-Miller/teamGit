@@ -30,7 +30,9 @@ const GetEvents = (props) => {
         const body = res.json();
         return body;
       })
-      .then((data) => setData(data._embedded.events)); /* sets data variable to data._embedded.events */
+      .then((data) =>
+        setData(data._embedded.events)
+      ); /* sets data variable to data._embedded.events */
 
     return response;
   };
@@ -42,42 +44,45 @@ const GetEvents = (props) => {
     }
   }, [data, lat, lng]);
 
-
   // .map functions to access the array of data, and return whatever information I want to display
   const nameRenderer = data.map((myData) => {
     return <div>{myData.name}</div>; /* return the name of the event*/
   });
 
   const dateRenderer = data.map((myData) => {
-    return (
-      myData.dates.start.localDate         /* return the date of the event*/
-      )
-  })
+    return myData.dates.start.localDate /* return the date of the event*/;
+  });
 
   const urlRenderer = data.map((myData) => {
-    return(
-      myData.url                  /* return the url where the user can buy tickets*/
-    )
-  })
+    return myData.url /* return the url where the user can buy tickets*/;
+  });
 
   // content is where I built out how I wanted to display my data
   const content =
-    data.length < 1 ? (               /* if data is empty, displays Loading..., otherwise displays my list */
+    data.length <
+    1 /* if data is empty, displays Loading..., otherwise displays my list */ ? (
       <div>Loading...</div>
     ) : (
       <ul>
-        <li><a href={urlRenderer[0]}>{nameRenderer[0]}</a> {dateRenderer[0]}</li>
+        <li>
+          <a href={urlRenderer[0]}>{nameRenderer[0]}</a> {dateRenderer[0]}
+        </li>
         <br />
-        <li><a href={urlRenderer[1]}>{nameRenderer[1]}</a> {dateRenderer[1]}</li>
+        <li>
+          <a href={urlRenderer[1]}>{nameRenderer[1]}</a> {dateRenderer[1]}
+        </li>
         <br />
-        <li><a href={urlRenderer[2]}>{nameRenderer[2]}</a> {dateRenderer[2]}</li>
+        <li>
+          <a href={urlRenderer[2]}>{nameRenderer[2]}</a> {dateRenderer[2]}
+        </li>
       </ul>
     );
 
   return (
-    <Container>
+    <Container className="events-container">
       <Row>
-        <Col md="12">
+        <Col className="events-col" md="12">
+          <h1 className="events-nearby">Events Near You!</h1>
           {content}
         </Col>
       </Row>
